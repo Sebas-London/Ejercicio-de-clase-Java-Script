@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Calcular numero romano</title>
+    <script>
+        function es_Romano() {
+            var numero = document.getElementById("numromano").value;
+            var numDecimal = [1000,900, 500,400, 100,90, 50,40, 10,9, 5,4, 1];
+            var numRomano = ["M","CM","D","CD","C","XC","L","XL","X","IX","V","IV","I"];
+            var lista = "";
+            for(i = 0; i < numDecimal.length;i++){
+                while(numDecimal[i] <= numero){
+                    lista = lista + numRomano[i];
+                    numero = numero - numDecimal[i];
+                }
+            }
+            return("El equivalente en numeros romanos es: "+lista);
+        }
+        
+    </script>
+</head>
+
+<body>
+    <h2>Escriba el numero que quiera convertir a romano y presione Calcular </h2>
+
+    <input id="numromano" type="number">
+    <p id="resultado" value=" "></p>
+    <input type="button" value="Calcular" onclick=" document.getElementById('resultado').innerHTML= es_Romano() ; ">
+
+</body>
+
+</html>

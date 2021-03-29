@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Calcular año bisiesto</title>
+    <script>
+        function es_Bisiesto() {
+            var año = document.getElementById("ingreso").value;
+            if((año % 4) == 0) {
+                if ((año % 100) != 0) {
+                    return "El año ingresado es bisiesto"; 
+                }
+                else{
+                    if((año % 400) == 0){
+                        return "El año ingresado es bisiesto";
+                    }
+                }
+            }
+            return "El año ingresado no es bisiesto";
+        }
+    </script>
+</head>
+
+<body>
+    <h2>Escriba el año que desea saber si es bisiesto y presione Calcular: </h2>
+
+    <input id="ingreso" type="number">
+    <p id="resultado" value=" "></p>
+    <input type="button" value="Calcular" onclick=" document.getElementById('resultado').innerHTML= es_Bisiesto() ; ">
+
+</body>
+
+</html>

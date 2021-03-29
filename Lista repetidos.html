@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Calcular elementos repetidos</title>
+    <script>
+        function es_Repetido() {
+            var listaIngresada = document.getElementById("ingreso").value;
+            var aux = 0 ;
+            var lista = [];
+
+            for(var i = 0;i <= listaIngresada.length; i++){
+                aux = 0
+                for(var j = 0; j <= listaIngresada.length; j++){
+                    if(listaIngresada[j] == listaIngresada[i]){
+                        aux = aux + 1;
+                    }
+                }
+                if(aux > 1){
+                    lista.push(listaIngresada[i]);
+                }
+            }
+            return ("Lista con elementos repetidos " + "["+ lista +"]")
+        }
+    </script>
+</head>
+
+<body>
+    <h2>Escriba la lista que desea conocer los elementos repetidos y presione Calcular </h2>
+
+    <input id="ingreso" type="text">
+    <p id="resultado" value=" "></p>
+    <input type="button" value="Calcular" onclick=" document.getElementById('resultado').innerHTML= es_Repetido() ; ">
+
+</body>
+
+</html>

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <script>
+        function es_Pangrama() {
+            const abecedario = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j',
+             'k', 'l', 'm', 'n', 'ñ', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 
+             'x', 'y', 'z'];
+            var cadena = document.getElementById("cadena").value;
+            var cadena = cadena.toLowerCase();
+            
+            for (var x=0; x < abecedario.length; x++){
+                var actual = abecedario[x];
+
+                if(!cadena.includes(actual)){
+                    console.log("La cadena de texto no es pangrama (C)");
+                    return "La cadena de texto no es pangrama";
+                }
+            }
+            console.log("La cadena de texto es pangrama (C)");
+            return "La cadena de texto es pangrama";
+        }
+    </script>
+</head>
+
+<body>
+    <h2>Escriba la cadena de texto que desea saber si es pangrama o no y presione Calcular: </h2>
+
+    <input id="cadena" type="text ">
+    <p id="respuesta" value=" "></p>
+    <input type="button" value="Calcular" onclick=" document.getElementById('respuesta').innerHTML= es_Pangrama() ; ">
+
+</body>
+
+</html>
